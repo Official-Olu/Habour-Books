@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbour Books</title>
+  <link rel="stylesheet" href="http://example.com/css/reader.css">
+  <style>
+    :root { --ink:#16324f; --paper:#f7fafc; --accent:#1f7a6d; --line:#d5e0ea; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+    .notice { background:#fff3cd; border-bottom:2px solid #e0b100; padding:10px 16px; font-size:14px; text-align:center; }
+    header { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:16px 24px; background:#fff; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:center; gap:10px; font-size:1.5rem; font-weight:bold; }
+    nav a { margin-left:18px; color:var(--ink); text-decoration:none; }
+    nav a:hover { color:var(--accent); }
+    .hero { padding:44px 24px; text-align:center; background:#e4f0ee; }
+    .hero h1 { margin:0 0 8px; font-size:2rem; }
+    main { max-width:960px; margin:0 auto; padding:24px; }
+    h2 { border-bottom:2px solid var(--line); padding-bottom:6px; margin-top:36px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px; display:flex; flex-direction:column; gap:8px; }
+    .cover { height:120px; border-radius:6px; display:flex; align-items:flex-end; padding:10px; color:#fff; font-weight:bold; }
+    .c1 { background:#1f7a6d; } .c2 { background:#16324f; } .c3 { background:#8a4b2a; } .c4 { background:#5b3f8c; }
+    .card h3 { margin:0; font-size:1.05rem; }
+    .card p { margin:0; font-size:14px; color:#4a5f73; }
+    button { padding:8px 12px; border:0; border-radius:6px; background:var(--accent); color:#fff; font-size:14px; cursor:pointer; }
+    button.saved { background:#6b7c8c; }
+    .wish { margin-top:12px; font-weight:bold; }
+    .featured { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+    .featured img { width:140px; height:190px; object-fit:cover; background:#cfdbe6; border-radius:6px; }
+    iframe { width:100%; height:200px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+    ul.links { padding-left:20px; }
+    footer { border-top:1px solid var(--line); padding:20px 24px; text-align:center; font-size:14px; }
+  </style>
+</head>
+<body id="top">
+  <div class="notice">
+    <strong>Intentionally insecure test page.</strong> Fictional bookshop built for the WebSecure Inspector study. Not a real business. Please do not enter any real information.
+  </div>
+
+  <header>
+    <div class="brand">
+      <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="3" fill="#1f7a6d"/><rect x="7" y="9" width="18" height="3" fill="#f7fafc"/><rect x="7" y="15" width="12" height="3" fill="#f7fafc"/></svg>
+      Harbour Books
+    </div>
+    <nav>
+      <a href="#shelf">Shelf</a>
+      <a href="#events">Events</a>
+      <a href="#community">Community</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Stories from the harbour</h1>
+    <p>An imaginary bookshop with a few real mistakes hidden inside.</p>
+  </section>
+
+  <main>
+    <h2>Featured this week</h2>
+    <div class="featured">
+      <img src="http://example.com/images/featured-book.jpg" alt="Featured book cover">
+      <p>Our staff pick is a quiet novel about a lighthouse and the people who visit it. Save it to your wishlist below.</p>
+    </div>
+
+    <h2 id="shelf">On the shelf</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="cover c1">Tidewater</div>
+        <h3>Tidewater</h3>
+        <p>A coastal mystery.</p>
+        <button type="button" data-id="1">Save</button>
+      </div>
+      <div class="card">
+        <div class="cover c2">Night Ferry</div>
+        <h3>Night Ferry</h3>
+        <p>A short story collection.</p>
+        <button type="button" data-id="2">Save</button>
+      </div>
+      <div class="card">
+        <div class="cover c3">Salt and Rope</div>
+        <h3>Salt and Rope</h3>
+        <p>Cooking for sailors.</p>
+        <button type="button" data-id="3">Save</button>
+      </div>
+      <div class="card">
+        <div class="cover c4">The Long Quay</div>
+        <h3>The Long Quay</h3>
+        <p>A history of the docks.</p>
+        <button type="button" data-id="4">Save</button>
+      </div>
+    </div>
+    <p class="wish" id="wish-count" aria-live="polite">Wishlist is empty.</p>
+
+    <h2 id="events">Events</h2>
+    <iframe src="http://example.com/events-calendar" title="Events calendar"></iframe>
+
+    <h2 id="community">Community</h2>
+    <ul class="links">
+      <li><a href="https://example.org/author-interviews" target="_blank">Author interviews</a></li>
+      <li><a href="https://example.org/book-club" target="_blank" rel="noopener">Book club forum</a></li>
+      <li><a href="https://example.org/reading-challenges" target="_blank" rel="noreferrer">Reading challenges</a></li>
+      <li><a href="https://example.org/library-partners" target="_blank" rel="nofollow">Library partners</a></li>
+      <li><a href="https://example.org/privacy" target="_blank" rel="noopener noreferrer">Privacy notice</a></li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </main>
+
+  <footer>&copy; Harbour Books (fictional) &middot; Test page for security research</footer>
+
+  <script src="http://example.com/js/newsletter.js"></script>
+
+  <script>
+    // Wishlist. Stores only book numbers so the data is harmless.
+    (function () {
+      var STORE = 'wishlist';
+      var buttons = document.querySelectorAll('button[data-id]');
+      var label = document.getElementById('wish-count');
+
+      function read() {
+        try { return JSON.parse(localStorage.getItem(STORE)) || []; }
+        catch (e) { return []; }
+      }
+      function write(list) {
+        try { localStorage.setItem(STORE, JSON.stringify(list)); } catch (e) {}
+      }
+      function paint() {
+        var list = read();
+        for (var i = 0; i < buttons.length; i++) {
+          var id = Number(buttons[i].getAttribute('data-id'));
+          var on = list.indexOf(id) !== -1;
+          buttons[i].textContent = on ? 'Saved' : 'Save';
+          buttons[i].className = on ? 'saved' : '';
+        }
+        label.textContent = list.length === 0 ? 'Wishlist is empty.' : 'Books on your wishlist: ' + list.length;
+      }
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function (event) {
+          var id = Number(event.currentTarget.getAttribute('data-id'));
+          var list = read();
+          var at = list.indexOf(id);
+          if (at === -1) { list.push(id); } else { list.splice(at, 1); }
+          write(list);
+          paint();
+        });
+      }
+      paint();
+    })();
+  </script>
+</body>
+</html>
